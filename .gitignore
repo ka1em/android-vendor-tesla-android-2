@@ -8,3 +8,5 @@
 
 # Release keys
 signing/*
+.idea/
+*~
