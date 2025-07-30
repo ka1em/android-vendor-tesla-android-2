@@ -153,8 +153,8 @@ PRODUCT_COPY_FILES += \
 
 # LineageOS browser
 
-PRODUCT_PACKAGES += \
-    Jelly \
+# PRODUCT_PACKAGES += \
+#    Jelly \
 
 ################################################################################
 
