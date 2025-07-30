@@ -20,11 +20,11 @@ PRODUCT_EXTRA_RECOVERY_KEYS := $(LOCAL_PATH)/signing/platform
 
 # OTA Updates
 
-PRODUCT_PACKAGES += \
-    Updater \
+# PRODUCT_PACKAGES += \
+#    Updater \
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.tesla-android.updater.allow_downgrading=true \
+    persist.tesla-android.updater.allow_downgrading=false \
 
 GD_SUPER_PARTITION_SIZE_MB := 7500
 
@@ -59,19 +59,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.offline-mode.is_enabled=1 \
     persist.tesla-android.offline-mode.telemetry.is_enabled=1 \
     persist.tesla-android.offline-mode.tesla-firmware-downloads=1 \
-    persist.tesla-android.virtual-display.resolution.width=1088 \
-    persist.tesla-android.virtual-display.resolution.height=832 \
+    persist.tesla-android.virtual-display.resolution.width=1632 \
+    persist.tesla-android.virtual-display.resolution.height=1248 \
     persist.tesla-android.virtual-display.refresh_rate=30 \
-    persist.tesla-android.virtual-display.quality=70 \
+    persist.tesla-android.virtual-display.quality=90 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
     persist.tesla-android.virtual-display.renderer=0 \
-    persist.drm_hwc.headless.config="1088x832@30" \
+    persist.drm_hwc.headless.config="1632x1248@30" \
     persist.tesla-android.browser_audio.is_enabled=0 \
     persist.tesla-android.browser_audio.volume=100 \
     persist.tesla-android.virtual-display.is_responsive=0 \
-    persist.tesla-android.virtual-display.is_h264=0 \
+    persist.tesla-android.virtual-display.is_h264=1 \
     persist.tesla-android.gps.is_active=0 \
+
+#persist.drm_hwc.headless.config="1088x832@30" \
 
 ################################################################################
 
@@ -103,12 +105,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Prebuilt applications
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall.sh \
-    $(LOCAL_PATH)/applications/autokit/AutoKit.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/AutoKit.apk_ \
+# PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/applications/preinstall.sh:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall.sh \
+#    $(LOCAL_PATH)/applications/autokit/AutoKit.apk:$(TARGET_COPY_OUT_VENDOR)/etc/preinstall/AutoKit.apk_ \
 
-PRODUCT_PACKAGES += \
-    AutoKit \
+# PRODUCT_PACKAGES += \
+#    AutoKit \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/services/updateBootFiles/updateBootFiles.sh:$(TARGET_COPY_OUT_VENDOR)/etc/updateBootFiles.sh \
@@ -121,7 +123,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Google Apps
 
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+# $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
 ################################################################################
 
@@ -189,10 +191,6 @@ PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/services/lighttpd/lighttpd:$(TARGET_COPY_OUT_VENDOR)/bin/lighttpd \
      $(LOCAL_PATH)/services/lighttpd/lighttpd.conf:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/lighttpd.conf \
-     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/fullchain.pem \
-     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/privkey.pem \
-     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem \
-     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem \
      $(LOCAL_PATH)/services/lighttpd/www-default/assets/AssetManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/assets/AssetManifest.json \
      $(LOCAL_PATH)/services/lighttpd/www-default/assets/FontManifest.json:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/assets/FontManifest.json \
      $(LOCAL_PATH)/services/lighttpd/www-default/assets/NOTICES:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/assets/NOTICES \
@@ -261,6 +259,10 @@ PRODUCT_COPY_FILES += \
 #     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.mjs:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.mjs \
 #     $(LOCAL_PATH)/services/lighttpd/www-default/main.dart.wasm:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/www-default/main.dart.wasm \
 
+#     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/fullchain.pem \
+#     $(LOCAL_PATH)/services/lighttpd/certificates/device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/device.teslaandroid.com/privkey.pem \
+#     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/fullchain.pem \
+#     $(LOCAL_PATH)/services/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem:$(TARGET_COPY_OUT_VENDOR)/tesla-android/lighttpd/certificates/fullscreen.device.teslaandroid.com/privkey.pem \
 ################################################################################
 
 # Overlays
