@@ -53,24 +53,24 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tesla-android.softap.band_type=2 \
-    persist.tesla-android.softap.channel=44 \
+    persist.tesla-android.softap.channel=149 \
     persist.tesla-android.softap.channel_width=3 \
     persist.tesla-android.softap.is_enabled=1 \
     persist.tesla-android.offline-mode.is_enabled=1 \
     persist.tesla-android.offline-mode.telemetry.is_enabled=1 \
     persist.tesla-android.offline-mode.tesla-firmware-downloads=1 \
-    persist.tesla-android.virtual-display.resolution.width=1632 \
-    persist.tesla-android.virtual-display.resolution.height=1248 \
+    persist.tesla-android.virtual-display.resolution.width=1088 \
+    persist.tesla-android.virtual-display.resolution.height=832 \
     persist.tesla-android.virtual-display.refresh_rate=30 \
-    persist.tesla-android.virtual-display.quality=90 \
+    persist.tesla-android.virtual-display.quality=100 \
     persist.tesla-android.virtual-display.density=200 \
     persist.tesla-android.virtual-display.lowres=0 \
-    persist.tesla-android.virtual-display.renderer=2 \
-    persist.drm_hwc.headless.config="1632x1248@30" \
+    persist.tesla-android.virtual-display.renderer=0 \
+    persist.drm_hwc.headless.config="1088x832@30" \
     persist.tesla-android.browser_audio.is_enabled=0 \
     persist.tesla-android.browser_audio.volume=100 \
     persist.tesla-android.virtual-display.is_responsive=0 \
-    persist.tesla-android.virtual-display.is_h264=1 \
+    persist.tesla-android.virtual-display.is_h264=0 \
     persist.tesla-android.gps.is_active=0 \
 
 #persist.drm_hwc.headless.config="1088x832@30" \
@@ -311,3 +311,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.device_config.mglru_native.lru_gen_config=core \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.debuggable=1 \
+    ro.allow.mock.location=1 \
